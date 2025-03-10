@@ -1,5 +1,10 @@
 package edu.estatuas;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.ArrayList;
+import java.util.Collections;
+
 
 public class ScoreCard {
     private final String color;
@@ -16,6 +21,7 @@ public class ScoreCard {
     public void setRedCorner(String boxerName){
         this.redCorner = boxerName;
     }
+
     public void setBlueCorner(String boxerName){
         this.blueCorner = boxerName;
     }

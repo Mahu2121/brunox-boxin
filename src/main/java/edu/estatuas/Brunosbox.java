@@ -60,7 +60,7 @@ public class Brunosbox
          * a partir de la tarjeta blanca entregada
          * por el juez blanco.
          */
-/**
+
         ScoreCard whiteScoreCard = new ScoreCard("WHITE");
 
         /**

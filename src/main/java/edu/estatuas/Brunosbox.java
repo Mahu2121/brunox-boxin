@@ -67,16 +67,16 @@ public class Brunosbox
          * Asigna el nombre de los pugiles
          * Rocky Balboa (red) vs Apollo Creed (blue)
          */
-/**
-        whiteScoreCard.setRCorner("Rocky Balboa");
-        whiteScoreCard.setBCorner("Apollo Creed");
+
+        whiteScoreCard.setRedCorner("Rocky Balboa");
+        whiteScoreCard.setBlueCorner("Apollo Creed");
 
         /**
          * Muestra la tarjeta por consola con
          * el formato que se propone en el enunciado
          * del ejercicio.
          */
-/**
+
         System.out.println(whiteScoreCard);
 
 
@@ -93,9 +93,8 @@ public class Brunosbox
          *
          * Pasa el caso test que propongo.
          */
-/**
+
         RegularRound round = new RegularRound("10 - 9");
-        round.boxerRoundScore();
         System.out.println("\n\t Regular round\t" + round.getRedBoxerScore() +
                 " - " + round.getBlueBoxerScore());
 

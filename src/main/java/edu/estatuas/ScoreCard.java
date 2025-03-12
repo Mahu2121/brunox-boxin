@@ -12,14 +12,11 @@ public class ScoreCard {
     private String redCorner = "";
     private String blueCorner = "";
     private String [] judgeScoreCard;
+    private byte numRounds;
 
     private List<Round> rounds = new ArrayList<Round>();
 
 
-    public void addRound(byte redScore, byte blueScore) {
-        Round round = new Round(redScore, blueScore);
-        rounds.add(round);
-    }
 
     public ScoreCard(String color) {
         this.color = color;
@@ -33,6 +30,24 @@ public class ScoreCard {
         this.blueCorner = boxerName;
     }
 
+
+    public byte getNumRounds() {
+        return (byte) this.rounds.size();
+    }
+
+    public byte viewRounds(){
+
+    }
+
+    @Override
+    public String toString() {
+        return "\n\t\t\t   " + this.color
+                + "\n\t\t" + this.blueCorner
+                + "\t" + this.redCorner
+                + "\n\t\t\t"
+                + this.getNumRounds() + " rounds\n"
+                + this.viewRounds();
+    }
 
 
 

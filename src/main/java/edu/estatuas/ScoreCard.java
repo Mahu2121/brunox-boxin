@@ -12,7 +12,7 @@ public class ScoreCard {
     private String redCorner = "";
     private String blueCorner = "";
     private String [] judgeScoreCard;
-    private byte numRounds;
+    private String roundsView;
 
     private List<Round> rounds = new ArrayList<Round>();
 
@@ -35,8 +35,13 @@ public class ScoreCard {
         return (byte) this.rounds.size();
     }
 
-    public byte viewRounds(){
+    public String viewRounds(){
+        StringBuilder roundsView = new StringBuilder();
 
+        roundsView.append("\n Round \t Score \t Round \t Score \t Round \n")
+                .append("\n Score \t Total \t    \t Total \t Score \n");
+
+        return roundsView.toString();
     }
 
     @Override
@@ -48,7 +53,6 @@ public class ScoreCard {
                 + this.getNumRounds() + " rounds\n"
                 + this.viewRounds();
     }
-
 
 
 

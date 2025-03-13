@@ -41,6 +41,23 @@ public class ScoreCard {
         roundsView.append("\n Round \t Score \t Round \t Score \t Round \n")
                 .append("\n Score \t Total \t    \t Total \t Score \n");
 
+        byte roundNum = 1;
+
+        byte redBoxerScoreTotal = 0;
+        byte blueBoxerScoreTotal = 0;
+
+        for(Round round : this.rounds) {
+            roundsView.append("\n\t")
+                    .append(round.getRedBoxerScore())
+                    .append("\t\s")
+                    .append(redBoxerScoreTotal += round.getRedBoxerScore())
+                    .append("\t\s\s")
+                    .append(roundNum++)
+                    .append("\t\s")
+                    .append(blueBoxerScoreTotal += round.getBlueBoxerScore())
+                    .append("\t\s")
+                    .append(round.getBlueBoxerScore());
+        }
         return roundsView.toString();
     }
 

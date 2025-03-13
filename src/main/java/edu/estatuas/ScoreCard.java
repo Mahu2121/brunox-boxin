@@ -84,13 +84,13 @@ public class ScoreCard {
         for(Round round : this.rounds) {
             roundsView.append("\n\t")
                     .append(round.getRedBoxerScore())
-                    .append("\t\s")
+                    .append("\t\s\t")
                     .append(redBoxerScoreTotal += round.getRedBoxerScore())
-                    .append("\t\s\s")
+                    .append("\t\s\t")
                     .append(roundNum++)
-                    .append("\t\s")
+                    .append("\t\s\t")
                     .append(blueBoxerScoreTotal += round.getBlueBoxerScore())
-                    .append("\t\s")
+                    .append("\t\s\t")
                     .append(round.getBlueBoxerScore());
         }
         return roundsView.toString();

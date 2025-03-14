@@ -41,7 +41,7 @@ public class ScoreCard {
         return (byte) this.rounds.size();
     }
 
-    private byte getRedBoxerFinalScore() {
+    public byte getRedBoxerFinalScore() {
         if (this.RedBoxerFinalScore == 0) {
             int totalScore = 0;
             for (Round round : rounds) {
@@ -50,7 +50,7 @@ public class ScoreCard {
             this.RedBoxerFinalScore = (byte) totalScore;
         }return this.RedBoxerFinalScore;
     }
-    private byte getBlueBoxerFinalScore() {
+    public byte getBlueBoxerFinalScore() {
         if (this.BlueBoxerFinalScore == 0) {
             int totalScore = 0;
             for (Round round : rounds) {
@@ -103,12 +103,8 @@ public class ScoreCard {
                 + "\t" + this.redCorner
                 + "\n\t\t\t"
                 + this.getNumRounds() + " rounds\n"
-                + this.viewRounds()
-                + "\n\t FINAL SCORE: "
-                + this.getRedBoxerFinalScore()
-                + " - "
-                + this.getBlueBoxerFinalScore()
-                + " FINAL SCORE";
+                + this.viewRounds();
+
     }
 
 

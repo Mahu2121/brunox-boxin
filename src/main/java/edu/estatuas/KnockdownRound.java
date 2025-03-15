@@ -24,9 +24,6 @@ public class KnockdownRound implements Round {
         return roundScore;
     }
 
-    public void boxerRoundScore(){
-
-    }
 
     @Override
     public byte getRedBoxerScore() {

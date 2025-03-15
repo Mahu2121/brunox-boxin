@@ -4,6 +4,8 @@ public class PointsDeducted implements Round{
     private final String roundScore;
     private byte redBoxerScore;
     private byte blueBoxerScore;
+    private String redScore;
+    private String blueScore;
 
         /* hecerlo igual que regular round con el parseByte pero divideiendolo en dos metodos:
 
@@ -13,29 +15,37 @@ public class PointsDeducted implements Round{
          */
     PointsDeducted(String roundScore) {
         this.roundScore = roundScore.replaceAll("\\s", "");
-        this.parseBoxerRoundScore();
+        this.parseRoundScore();
+        this.parseBlueBoxerScore();
+        this.parseRedBoxerScore();
         }
 
-    private void parseBoxerRoundScore() {
-    String[] scores = roundScore.split("-",2);
-    String redScore = scores[0];
-    String blueScore = scores[1];
-    this.redBoxerScore = Byte.parseByte(parseRedBoxerScore(redScore));
-    this.blueBoxerScore = Byte.parseByte(parseBlueBoxerScore(blueScore));
+    private void parseRoundScore() {
+        String[] scores = getRoundScore().split("-",2);
+        this.redScore = scores[0];
+        this.blueScore = scores[1];
     }
 
-    private void parseRedBoxerScore(String redScore) {
-    String redScore = getRedBoxerScore()+"";
-    String[] points = redScore.split(",",2);
-    this.redBoxerScore = Byte.parseByte(points[0]);}
+    private void parseRedBoxerScore() {
+        String[] redPoint = this.redScore.split(",",2);
+        if (redPoint.length == 2){
+            this.redBoxerScore = Byte.parseByte(redPoint[1]);
+        } else {
+            this.redBoxerScore = Byte.parseByte(redPoint[0]);
+        }
+    }
 
-    private void parseBlueBoxerScore(String blueScore) {
-    String blueScore = getBlueBoxerScore()+"";
-    String[] scores = blueScore.split(",",2);
-    this.redBoxerScore = Byte.parseByte(scores[0]);}
+    private void parseBlueBoxerScore() {
+        String[] bluePoint = this.blueScore.split(",",2);
+        if (bluePoint.length == 2){
+            this.blueBoxerScore = Byte.parseByte(bluePoint[0]);
+        } else {
+            this.blueBoxerScore = Byte.parseByte(bluePoint[0]);
+        }
+    }
 
-
-    public void boxerRoundScore() {
+    String getRoundScore() {
+        return this.roundScore;
     }
 
     @Override
@@ -47,5 +57,9 @@ public class PointsDeducted implements Round{
     public byte getBlueBoxerScore() {
         return this.blueBoxerScore;
     }
+    @Override
+    public String toString() {
+        return this.getRedBoxerScore() + " - " + this.getBlueBoxerScore();
+}
 
 }

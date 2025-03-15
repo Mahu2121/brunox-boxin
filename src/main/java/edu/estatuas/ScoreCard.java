@@ -12,7 +12,6 @@ public class ScoreCard {
     private String redCorner = "";
     private String blueCorner = "";
     private String [] judgeScoreCard;
-    private String roundsView;
     private byte BlueBoxerFinalScore;
     private byte RedBoxerFinalScore;
 

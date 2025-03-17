@@ -37,9 +37,7 @@ public class PointsDeducted implements Round{
 
     private void parseBlueBoxerScore() {
         String[] bluePoint = this.blueScore.split(",",2);
-        if (bluePoint.length == 2){
-            this.blueBoxerScore = Byte.parseByte(bluePoint[0]);
-        } else {
+        if (bluePoint.length == 2 || bluePoint.length == 1) {
             this.blueBoxerScore = Byte.parseByte(bluePoint[0]);
         }
     }

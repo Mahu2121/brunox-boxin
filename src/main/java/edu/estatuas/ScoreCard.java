@@ -94,6 +94,9 @@ public class ScoreCard {
         }
         return roundsView.toString();
     }
+    public List<Round> getRounds() {
+        return this.rounds;
+    }
 
     @Override
     public String toString() {

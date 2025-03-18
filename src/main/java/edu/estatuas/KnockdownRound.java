@@ -1,25 +1,29 @@
 package edu.estatuas;
 
-public class RegularRound implements Round {
+public class KnockdownRound implements Round {
     private final String roundScore;
     private byte redBoxerScore;
     private byte blueBoxerScore;
+    /* hacerlo igual que regular round con el parseByte */
 
 
-    RegularRound(String roundScore) {
+    KnockdownRound(String roundScore) {
+
         this.roundScore = roundScore.replaceAll("\\s", "");
         this.parseBoxerRoundScore();
     }
 
-    String  getRoundScore() {
-        return this.roundScore;
-    }
-
     private void parseBoxerRoundScore(){
-        String[] scores = getRoundScore().split("-", 2);
+        String [] scores = getRoundScore().split("-",2);
         this.redBoxerScore = Byte.parseByte(scores[0]);
         this.blueBoxerScore = Byte.parseByte(scores[1]);
+
     }
+
+    private String getRoundScore(){
+        return roundScore;
+    }
+
 
     @Override
     public byte getRedBoxerScore() {
@@ -35,6 +39,4 @@ public class RegularRound implements Round {
     public String toString() {
         return this.getRedBoxerScore() + " - " + this.getBlueBoxerScore();
     }
-
-
 }

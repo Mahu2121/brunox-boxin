@@ -67,16 +67,16 @@ public class Brunosbox
          * Asigna el nombre de los pugiles
          * Rocky Balboa (red) vs Apollo Creed (blue)
          */
-/**
-        whiteScoreCard.setRCorner("Rocky Balboa");
-        whiteScoreCard.setBCorner("Apollo Creed");
+
+        whiteScoreCard.setRedCorner("Rocky Balboa");
+        whiteScoreCard.setBlueCorner("Apollo Creed");
 
         /**
          * Muestra la tarjeta por consola con
          * el formato que se propone en el enunciado
          * del ejercicio.
          */
-/**
+
         System.out.println(whiteScoreCard);
 
 
@@ -93,9 +93,9 @@ public class Brunosbox
          *
          * Pasa el caso test que propongo.
          */
-/**
+
         RegularRound round = new RegularRound("10 - 9");
-        round.boxerRoundScore();
+
         System.out.println("\n\t Regular round\t" + round.getRedBoxerScore() +
                 " - " + round.getBlueBoxerScore());
 
@@ -112,8 +112,8 @@ public class Brunosbox
          * puntos obtenidos por cada pugil en cada round.
          * Se llaman round score.
          */
-/**
-        whiteScoreCard.loadJudgeScoreCard(
+
+        whiteScoreCard.loadJudgeScoreCard(data[0]
                 // Escribe aquí el código para acceder al primer
                 // elemento del array String[][] data de la línea 13,
                 // la tarjeta blanca
@@ -124,7 +124,7 @@ public class Brunosbox
          * Calcula el final score o puntuación total
          * de cada pugil y muestralo en la tarjeta.
          */
-/**
+
         System.out.println("\t FINAL SCORE: " + whiteScoreCard.getRedBoxerFinalScore() +
                 " - " + whiteScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
 
@@ -133,8 +133,9 @@ public class Brunosbox
          * round de cada pugil y muestralo en la tarjeta.
          * Se llaman score total.
          */
-/**
+
         System.out.println(whiteScoreCard);
+
         System.out.println("\t FINAL SCORE: " + whiteScoreCard.getRedBoxerFinalScore() +
                 " - " + whiteScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
 
@@ -149,9 +150,8 @@ public class Brunosbox
          * En KnockdownRound la puntuacion se almacena
          * como un número entero, no como un String.
          */
-/**
+
         KnockdownRound knockdownRound = new KnockdownRound("10 - 8");
-        knockdownRound.boxerRoundScore();
         System.out.println("\n\t knockdown round\t" + knockdownRound.getRedBoxerScore() +
                 " - " + knockdownRound.getBlueBoxerScore());
 
@@ -165,7 +165,7 @@ public class Brunosbox
          * en el casting, las siguientes líneas daran error
          * en tiempo de ejecución.
          */
-/**
+
         RegularRound regular = (RegularRound) RoundFactory.getRound("9 - 10");
         System.out.println("\t regular round: " + regular);
         KnockdownRound knockdown = (KnockdownRound) RoundFactory.getRound("8 - 10");
@@ -194,12 +194,12 @@ public class Brunosbox
          * round de cada pugil y muestralo en la tarjeta.
          * Se llaman score total.
          */
-/**
-        ScoreCard blueScoreCard = new ScoreCard("BLUE");
-        blueScoreCard.setRCorner("Rocky Balboa");
-        blueScoreCard.setBCorner("Apollo Creed");
 
-        blueScoreCard.loadJudgeScoreCard(
+        ScoreCard blueScoreCard = new ScoreCard("BLUE");
+        blueScoreCard.setRedCorner("Rocky Balboa");
+        blueScoreCard.setBlueCorner("Apollo Creed");
+
+        blueScoreCard.loadJudgeScoreCard(data[1]
                 // Escribe aquí el código para acceder al segundo
                 // elemento del array String[][] data de la línea 13,
                 // la tarjeta azul
@@ -210,7 +210,7 @@ public class Brunosbox
          * Calcula el final score o puntuación total
          * de cada pugil y muestralo en la tarjeta.
          */
-/**
+
         System.out.println("\t FINAL SCORE: " + blueScoreCard.getRedBoxerFinalScore() +
                 " - " + blueScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
 
@@ -225,14 +225,12 @@ public class Brunosbox
          * En PointsDeducted la puntuacion se almacena
          * como un número entero, no como un String.
          */
-/**
+
         PointsDeducted deducted = new PointsDeducted("10 - 8 ,1");
-        deducted.boxerRoundScore();
         System.out.println("\n\t points deducted round\t" + deducted.getRedBoxerScore() +
                 " - " + deducted.getBlueBoxerScore());
 
         deducted = new PointsDeducted("1, 8 - 10");
-        deducted.boxerRoundScore();
         System.out.println("\n\t points deducted round\t" + deducted.getRedBoxerScore() +
                 " - " + deducted.getBlueBoxerScore());
 
@@ -246,7 +244,7 @@ public class Brunosbox
          * en el casting, las siguiente línea dará error
          * en tiempo de ejecución.
          */
-/**
+
         PointsDeducted pointsDeducted = (PointsDeducted) RoundFactory.getRound("1, 8 - 10");
         System.out.println("\n\t factory deducted round: " + pointsDeducted);
 
@@ -273,12 +271,13 @@ public class Brunosbox
          * round de cada pugil y muestralo en la tarjeta.
          * Se llaman score total.
          */
-/**
+
         ScoreCard pinkScoreCard = new ScoreCard("PINK");
-        pinkScoreCard.setRCorner("Rocky Balboa");
-        pinkScoreCard.setBCorner("Apollo Creed");
+        pinkScoreCard.setRedCorner("Rocky Balboa");
+        pinkScoreCard.setBlueCorner("Apollo Creed");
 
         pinkScoreCard.loadJudgeScoreCard(
+                data[2]
                 // Escribe aquí el código para acceder al tercer
                 // elemento del array String[][] data de la línea 13,
                 // la tarjeta rosa
@@ -289,9 +288,8 @@ public class Brunosbox
          * Calcula el final score o puntuación total
          * de cada pugil y muestralo en la tarjeta.
          */
-/**
+
         System.out.println("\t FINAL SCORE: " + pinkScoreCard.getRedBoxerFinalScore() +
                 " - " + pinkScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
-    **/
     }
 }
